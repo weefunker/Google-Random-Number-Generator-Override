@@ -1,0 +1,40 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack --watch",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/out/google-rng-overlay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/out/google-rng-overlay/issues"
+  },
+  "homepage": "https://github.com/out/google-rng-overlay#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "caniuse-lite": "^1.0.30001625",
+    "react": "^17.0.1",
+    "react-beautiful-dnd": "^13.0.0",
+    "react-countup": "^4.3.3",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1",
+    "webpack": "^5.4.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "description": "",
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.12.1",
+    "file-loader": "^6.2.0"
+  }
+}

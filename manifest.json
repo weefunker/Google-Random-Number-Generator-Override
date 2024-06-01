@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "RNG Overlay",
+  "version": "1.0.19",
+  "permissions": ["storage"],
+  "description": "Adds an overlay to Google's Random Number Generator.",
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.google.com/*"],
+      "js": ["dist/index.bundle.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "dist/popup/index.html",
+    "default_icon": "icon.png"
+  }
+}
