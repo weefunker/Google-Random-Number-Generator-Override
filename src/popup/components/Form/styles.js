@@ -3,6 +3,8 @@ import styled from 'styled-components';
 const Container = styled.form`
   padding: 2rem;
   min-width: 400px;
+  background-color: #22C55E; /* Added this to set the container's background color to green */
+  border-radius: 10px; /* Optional: add some border-radius to match the styling */
 `;
 
 const Title = styled.h3`
@@ -52,7 +54,7 @@ const Button = styled.button`
 
   padding: 0.8rem 1.2rem;
 
-  background-color: #0094FF; 
+  background-color: #22C55E; /* Changed this to the green color */
   border: none;
   border-radius: 30px;
   
@@ -68,14 +70,14 @@ const Button = styled.button`
   }
 
   &:hover {
-    box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3), 0 1px 3px 1px rgba(66,133,244,0.15);
-    background-color: #0083E1;
+    box-shadow: 0 1px 2px 0 rgba(34, 197, 94, 0.3), 0 1px 3px 1px rgba(34, 197, 94, 0.15);
+    background-color: #1FA856;
     color: white;
   }
 
   &:active {
-    box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3),0 1px 3px 1px rgba(66,133,244,0.15);
-    background-color: #0074C8;
+    box-shadow: 0 1px 2px 0 rgba(34, 197, 94, 0.3), 0 1px 3px 1px rgba(34, 197, 94, 0.15);
+    background-color: #1C944F;
     color: white;
   }
 `;

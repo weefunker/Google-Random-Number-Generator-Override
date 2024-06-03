@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "RNG Overlay",
-  "version": "1.0.19",
+  "version": "1.1.24",
   "permissions": ["storage"],
   "description": "Adds an overlay to Google's Random Number Generator.",
   "icons": {
