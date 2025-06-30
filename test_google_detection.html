@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Google RNG Detection</title>
+</head>
+<body>
+    <h1>Test Google RNG Detection</h1>
+    
+    <!-- Simulate Google's RNG structure -->
+    <div class="g">
+        <div class="kp-blk">
+            <block-component data-attrid="random_number_generator">
+                <div>
+                    <div>Random number generator</div>
+                    <div style="font-size: 48px;">42</div>
+                    <div>
+                        <input type="number" aria-label="Minimum value" value="1">
+                        <input type="number" aria-label="Maximum value" value="100">
+                    </div>
+                    <div role="button" aria-label="Generate random number">Generate</div>
+                </div>
+            </block-component>
+        </div>
+    </div>
+
+    <script type="module">
+        // Test our detection logic
+        const checkForGenerator = (element) => {
+          const selectors = [
+            '[class*="randomnumber"]',
+            '[data-attrid*="random"]',
+            '[aria-label*="random number"]',
+            '[aria-label*="Random number"]',
+            'div[role="button"][aria-label*="Generate"]'
+          ];
+          
+          for (const selector of selectors) {
+            if (element.querySelector(selector)) {
+              console.log('RNG detected with selector:', selector);
+              return true;
+            }
+          }
+          
+          return false;
+        }
+
+        const getGeneratorContainer = () => {
+          const attributeSelectors = [
+            '[class*="randomnumber"]',
+            '[data-attrid*="random"]',
+            '[aria-label*="random number"]',
+            '[aria-label*="Random number"]'
+          ];
+          
+          for (const selector of attributeSelectors) {
+            const element = document.querySelector(selector);
+            if (element) {
+              let container = element;
+              while (container && container.tagName !== 'BLOCK-COMPONENT' && container.parentElement) {
+                if (container.classList.contains('g') || 
+                    container.classList.contains('kp-blk') ||
+                    container.getAttribute('data-attrid')) {
+                  break;
+                }
+                container = container.parentElement;
+              }
+              console.log('Found container via attribute selector:', selector, container);
+              return container;
+            }
+          }
+          return null;
+        }
+
+        // Test
+        console.log('Testing RNG detection...');
+        console.log('RNG detected:', checkForGenerator(document));
+        console.log('Container found:', getGeneratorContainer());
+    </script>
+</body>
+</html>

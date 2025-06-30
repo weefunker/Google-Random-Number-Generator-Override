@@ -8,16 +8,18 @@ import { Container, DisplayContainer } from './App.styles';
 
 import { GeneratorProvider } from './GeneratorContext';
 
-const App = () => {
+const App = ({ originalElements }) => {
+  const googleStyles = window.googleRNGStyles || {};
+  
   return (
-    <Container>
-      <GeneratorProvider>
+    <Container googleStyles={googleStyles}>
+      <GeneratorProvider originalElements={originalElements}>
         <DisplayContainer>
           <Display />
           <Limits />
         </DisplayContainer>
 
-      <Button />
+        <Button />
       </GeneratorProvider>
     </Container>
   )
