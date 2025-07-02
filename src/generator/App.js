@@ -5,7 +5,7 @@ import Limits from './components/Limits';
 import Button from './components/Button';
 import Carousel from './components/Carousel';
 
-import { Container, DisplayContainer, RNGSection } from './App.styles';
+import { Container, DisplayContainer, RNGSection, ShareIcon } from './App.styles';
 
 import { GeneratorProvider } from './GeneratorContext';
 
@@ -15,14 +15,14 @@ const App = ({ originalElements }) => {
   return (
     <Container googleStyles={googleStyles}>
       <GeneratorProvider originalElements={originalElements}>
+        <ShareIcon />
         <RNGSection>
           <DisplayContainer>
             <Display />
             <Limits />
           </DisplayContainer>
-          <Button />
         </RNGSection>
-        
+        <Button />
         <Carousel />
       </GeneratorProvider>
     </Container>

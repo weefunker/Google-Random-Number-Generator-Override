@@ -5,8 +5,8 @@ const Container = styled.div`
   height: 50px !important;
   min-height: 50px;
   max-height: 50px;
-  width: 655px;
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
   box-sizing: border-box;
 
   display: flex;
@@ -16,7 +16,7 @@ const Container = styled.div`
   color: #FFFFFF;
   font-size: 14px;
   font-weight: 500;
-  text-transform: none;
+  text-transform: uppercase;
   font-family: arial, sans-serif;
   line-height: 1;
 

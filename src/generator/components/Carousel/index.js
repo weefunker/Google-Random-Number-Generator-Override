@@ -59,25 +59,37 @@ const Carousel = () => {
     <CarouselContainer>
       <ExpandableSection>
         <TabsContainer>
-          <TabButton active={true}>
+          <TabButton
+            active={activeTab === 'games'}
+            onClick={() => handleTabClick('games')}
+          >
+            GAMES AND TOYS
+          </TabButton>
+          <TabButton
+            active={activeTab === 'tools'}
+            onClick={() => handleTabClick('tools')}
+          >
             TOOLS
           </TabButton>
         </TabsContainer>
 
         {isExpanded && (
           <CarouselContent>
-            <CarouselGrid>
-              {tools.map((item, index) => (
-                <CarouselItem key={index} href={item.href}>
-                  <ItemIcon 
-                    src={getIconSrc(item.icon)}
-                    alt={item.name}
-                    onError={(e) => handleIconError(e, 'tool')}
-                  />
-                  <ItemLabel>{item.name}</ItemLabel>
-                </CarouselItem>
-              ))}
-            </CarouselGrid>
+            {activeTab === 'tools' && (
+              <CarouselGrid>
+                {tools.map((item, index) => (
+                  <CarouselItem key={index} href={item.href}>
+                    <ItemIcon 
+                      src={getIconSrc(item.icon)}
+                      alt={item.name}
+                      onError={(e) => handleIconError(e, 'tool')}
+                    />
+                    <ItemLabel>{item.name}</ItemLabel>
+                  </CarouselItem>
+                ))}
+              </CarouselGrid>
+            )}
+            {activeTab === 'games' && <div />}
           </CarouselContent>
         )}
 

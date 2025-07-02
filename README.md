@@ -1,34 +1,40 @@
-# Random Number Generator Overlay
-A simple React.js overlay for Google's built-in Random Number Generator.
+# Google RNG Overlay
 
-It offers the option to run the generator and display a Target Number. To do that, simply set the number in the Popup and run the generator with the `Shift` key pressed.
+A for-fun toy to change the results of the Google random number generator. This browser extension overlays the standard RNG to give you predictable results.
 
-Please note that if no number is set on the Popup, running it with `Shift` will simply default to a random number.
+## Demo
 
-Also, when running the app with `Shift`, it takes no notice of the **Min** and **Max** values set and simply goes straight to the Target Number.
+![Demo GIF showing the extension in action.](rng-overlay.gif)
 
-## How To Build The App
-Inside the source directory, install all the neccessary dependencies with:
 
-    npm install
+## Features
 
-Next, build the app with:
+*   **Control the "random" number:** Hijack Google's RNG to get the numbers you want.
+*   **Sequential Numbers:** Add a list of numbers, and the generator will follow that sequence.
+*   **Shift-Key Activation:** Hold the **Shift** key while clicking "Generate" to get the next number in your list.
+*   **Separate UI:** Manage your list of numbers in a separate popup window, which can be operated from the main Google search screen.
 
-    npm run build
+## How It Works
 
-After the build, the significant files for packing are the following:
+1.  **Add Numbers:** Click the extension icon in your browser toolbar to open the popup window. Here, you can add, edit, and reorder the sequence of numbers you want the generator to produce.
+2.  **Activate:** On the Google search results page for "random number generator", hold down the **Shift** key and click the **Generate** button.
+3.  **Controlled Results:** The generator will now display the next number from your predefined sequence.
 
-- The `/dist` directory;
-- The `manifest.json` file;
-- The `icon.png` image.
+## Installation
 
-You can manually pack them into a `.zip` file and load them directly into the Browser.
+### Step 1: Open Chrome Extensions
+1. Open Chrome browser
+2. Go to `chrome://extensions/`
+3. Toggle **Developer mode** ON (top right)
 
-To load it with Chrome follow these steps:
+### Step 2: Load Extension
+1. Click **"Load unpacked"**
+2. Navigate to this project folder
+3. Select the `dist/` folder
+4. Click **"Select Folder"**
 
-- Open the `chrome://extensions` link;
-- Toggle `Developer Mode` in the top right corner;
-- Click `Load packed` and select the `.zip` file;
-- If you haven't packed the files, click `Load unpacked` and select the source directory.
-
-See [this link](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/) for how to temporarily load an extension on Firefox.
+### Step 3: Test
+1. Go to Google.com
+2. Search for "random number generator"
+3. You should see the enhanced RNG interface
+4. Click the extension icon to manage target numbers
