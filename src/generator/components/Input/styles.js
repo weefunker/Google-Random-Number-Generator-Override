@@ -1,32 +1,41 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 100%;
+  width: 120px;
+  display: flex;
+  flex-direction: column;
 `
 
 const Label = styled.div`
   line-height: 1.2;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.54);
+  color: #5f6368;
   text-transform: capitalize;
+  margin-bottom: 8px;
+  font-family: arial, sans-serif;
 `
 
 const Field = styled.input`
-  height: 30px;
-  width: 180px;
-  margin-bottom: 10px;
-
-  font-size: 18px;
-
-  border-radius: 0;
-  border-color: #aaa;
-  border-style: none;
-  border-bottom-style: solid;
-  border-bottom-width: 3px;
+  height: 40px;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-family: arial, sans-serif;
+  
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background-color: #fff;
+  
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
     border-color: #1a73e8;
+    box-shadow: 0 1px 2px rgba(26,115,232,.3);
+  }
+
+  &:hover {
+    border-color: #5f6368;
   }
 `
 
